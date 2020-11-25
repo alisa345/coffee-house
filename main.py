@@ -11,7 +11,7 @@ class MyWidget(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi('main.ui', self)
-        self.connection = sqlite3.connect("coffee.db")
+        self.connection = sqlite3.connect('coffee.db')
         self.cur = self.connection.cursor()
         res = self.cur.execute("""SELECT * FROM coffees""").fetchall()
         self.tableWidget.setColumnCount(7)
